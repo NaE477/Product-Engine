@@ -9,13 +9,13 @@ COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy the source code to the container
-COPY src ./src
+COPY . .
 
 # Package the application
 RUN mvn clean package -DskipTests
 
 # Use an official OpenJDK image as a base
-FROM openjdk:17-jdk-alpine
+FROM openjdk:21
 
 # Set the working directory
 WORKDIR /app
@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build app/target/naeim-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port
-EXPOSE 8080
+EXPOSE 8086
 
 # Run the application
 CMD ["java", "-jar", "app.jar"]
