@@ -9,13 +9,13 @@ COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy the source code to the container
-COPY . .
+COPY backend .
 
 # Package the application
 RUN mvn clean package -DskipTests
 
 # Use an official OpenJDK image as a base
-FROM openjdk:21
+FROM openjdk:22
 
 # Set the working directory
 WORKDIR /app

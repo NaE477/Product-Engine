@@ -33,7 +33,7 @@ services:
       - app-network
 
   app:
-    build: .
+    build: backend
     container_name: spring-boot-app
     ports:
       - "8086:8085"
