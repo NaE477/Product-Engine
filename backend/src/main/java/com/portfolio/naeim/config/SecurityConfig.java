@@ -18,11 +18,25 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .cors(withDefaults())
-                .authorizeRequests(authorizeRequests ->
-                        authorizeRequests
+                .authorizeHttpRequests(authorizeHttpRequests ->
+                        authorizeHttpRequests
                                 .requestMatchers("/api/**").permitAll() // Allow unrestricted access to API endpoints
                                 .anyRequest().authenticated() // Require authentication for all other requests
                 );
         return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurer() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:3000"); // Specify the frontend origin
+        configuration.addAllowedMethod("*"); // Allow all HTTP methods
+        configuration.addAllowedHeader("*"); // Allow all headers
+        configuration.setAllowCredentials(true); // Allow credentials
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration); // Apply CORS configuration to all endpoints
+
+        return source;
     }
 }
