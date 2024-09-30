@@ -1,8 +1,11 @@
 package com.portfolio.naeim.service;
 
 import com.portfolio.naeim.entities.User;
+import com.portfolio.naeim.exceptions.ResourceNotFoundException;
+import com.portfolio.naeim.exceptions.UserAlreadyExistsException;
 import com.portfolio.naeim.repositories.UserRepository;
 import com.portfolio.naeim.service.interfaces.UserService;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,11 +14,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final Logger logger = Logger.getLogger(UserServiceImpl.class.getName());
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
@@ -24,8 +29,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long id) {
-        Optional<User> user = userRepository.findById(id);
-        return user.orElseThrow(() -> new RuntimeException("User not found"));
+        return userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
     @Override
@@ -40,12 +45,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) {
-        return userRepository.save(user);
+        findByUsername(user.getUsername())
+                .ifPresent(existingUser -> {
+                    throw new UserAlreadyExistsException("Username already exists");
+                });
+
+        return registerUser(user);
     }
 
     @Override
+    @Transactional
     public User updateUser(Long id, User updatedUser) {
-        User existingUser = getUserById(id);
+        User existingUser = userRepository.getReferenceById(id);
         existingUser.setUsername(updatedUser.getUsername());
         existingUser.setEmail(updatedUser.getEmail());
         return userRepository.save(existingUser);
@@ -53,7 +64,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+        userRepository.findById(id).ifPresentOrElse(userRepository::delete, () -> {
+            logger.info("User not found with id: " + id);
+            throw new ResourceNotFoundException("User not found with id: " + id);
+        });
     }
 
     @Override
@@ -61,8 +75,8 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
-    public void registerUser(User user) {
+    public User registerUser(User user) {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 }
