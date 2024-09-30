@@ -5,6 +5,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
 
+import javax.security.auth.kerberos.EncryptionKey;
+import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,9 +30,10 @@ public class JwtTokenUtil {
         return claimsResolver.apply(claims);
     }
 
-    private Claims extractAllClaims(String token) {
-        return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
+        private Claims extractAllClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(SECRET_KEY.getBytes())
+                .build()
                 .parseClaimsJws(token)
                 .getBody();
     }
@@ -44,13 +47,17 @@ public class JwtTokenUtil {
         return createToken(claims, username);
     }
 
+    public Key securityKey() {
+        return new EncryptionKey(SECRET_KEY.getBytes(), 19);
+    }
+
     private String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 hours expiration
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .signWith(securityKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
