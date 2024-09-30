@@ -2,7 +2,6 @@ package com.portfolio.naeim.config;
 
 import com.portfolio.naeim.entities.User;
 import com.portfolio.naeim.service.interfaces.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

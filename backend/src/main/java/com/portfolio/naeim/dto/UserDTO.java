@@ -1,6 +1,5 @@
 package com.portfolio.naeim.dto;
 
-import com.portfolio.naeim.entities.User;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
