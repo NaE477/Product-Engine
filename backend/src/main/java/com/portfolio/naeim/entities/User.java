@@ -10,12 +10,21 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
+    private String name;
+
     private String username;
 
+    private String password;
+
     private String email;
+
+    public User(String name, String username, String email) {
+        this.name = name;
+        this.username = username;
+        this.email = email;
+    }
 }
