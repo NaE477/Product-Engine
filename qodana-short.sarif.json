@@ -1,0 +1,1199 @@
+{
+  "$schema": "https://raw.githubusercontent.com/schemastore/schemastore/master/src/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDJVMC",
+          "fullName": "Qodana Community for JVM",
+          "version": "242.22941",
+          "rules": [],
+          "taxa": [],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": []
+      },
+      "invocations": [
+        {
+          "startTimeUtc": "2024-09-30T22:25:16.68818172Z",
+          "exitCode": 0,
+          "toolExecutionNotifications": [
+            {
+              "message": {
+                "text": "Analysis by sanity inspection \"Java sanity\" was suspended due to high number of problems."
+              },
+              "level": "error",
+              "timeUtc": "2024-09-30T22:41:11.72421389Z",
+              "properties": {
+                "qodanaKind": "sanityFailure"
+              }
+            }
+          ],
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "versionControlProvenance": [
+        {
+          "repositoryUri": "https://github.com/NaE477/Product-Engine.git",
+          "revisionId": "f4cdd582c343454288e05f7f0f13bbee7770a01c",
+          "branch": "master",
+          "properties": {
+            "repoUrl": "https://github.com/NaE477/Product-Engine.git",
+            "lastAuthorName": "Naeim",
+            "vcsType": "Git",
+            "lastAuthorEmail": "naeimr4@gmail.com"
+          }
+        }
+      ],
+      "results": [],
+      "automationDetails": {
+        "id": "project/qodana/2024-09-30",
+        "guid": "e4e7fe13-5ace-4be4-a9ad-7933f032bb1f",
+        "properties": {
+          "jobUrl": "",
+          "analysisKind": "regular"
+        }
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "qodana.sanity.results": [
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference boot",
+              "markdown": "Unresolved reference boot"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/ProductEngineApplication.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 28,
+                    "charOffset": 57,
+                    "charLength": 4,
+                    "snippet": {
+                      "text": "boot"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 150,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim;\n\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "d670237c98a1ded5",
+              "equalIndicator/v1": "1217fd1ee5e2325196f76132c93cabf9fc36a046f1042e1aa7721240b54e93eb"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference springframework",
+              "markdown": "Unresolved reference springframework"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/ProductEngineApplication.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 12,
+                    "charOffset": 41,
+                    "charLength": 15,
+                    "snippet": {
+                      "text": "springframework"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 150,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim;\n\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "f11c78964bc15e6a",
+              "equalIndicator/v1": "1cee48b5f3f53bf5f36f1f107a33e6e2f1c716cac595d0e4f8973f1704bcdd7f"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference jakarta",
+              "markdown": "Unresolved reference jakarta"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/UserDTO.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 8,
+                    "charOffset": 43,
+                    "charLength": 7,
+                    "snippet": {
+                      "text": "jakarta"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 165,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim.dto;\r\n\r\nimport jakarta.validation.constraints.Email;\r\nimport jakarta.validation.constraints.NotEmpty;\r\nimport lombok.AllArgsConstructor;\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "514ff1c21d0361e9",
+              "equalIndicator/v1": "1fcef15a2d11f9d98d4b5e6085b38fc1c446a2b3a08c78db0fd1abb0c075b86f"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Entity",
+              "markdown": "Unresolved reference Entity"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/entities/User.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 13,
+                    "startColumn": 2,
+                    "charOffset": 287,
+                    "charLength": 6,
+                    "snippet": {
+                      "text": "Entity"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 11,
+                    "startColumn": 1,
+                    "charOffset": 257,
+                    "charLength": 101,
+                    "snippet": {
+                      "text": "@Getter\r\n@NoArgsConstructor\r\n@Entity\r\n@Table(name = \"users\")\r\npublic class User extends BaseEntity {\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "00e8ff2c12a30aae",
+              "equalIndicator/v1": "20165fab2df292cc106d93df540ff085d287d10ae91c185c9ffc0deca1b83b41"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference lombok",
+              "markdown": "Unresolved reference lombok"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/AuthRequest.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 8,
+                    "charOffset": 43,
+                    "charLength": 6,
+                    "snippet": {
+                      "text": "lombok"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 65,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim.dto;\r\n\r\nimport lombok.Data;\r\n\r\n@Data\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "e2198dc85cc83690",
+              "equalIndicator/v1": "37d51ed98c73683ed4c9969089b24a859e00ce7850cc23109eb8e344eeac9385"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Pageable",
+              "markdown": "Unresolved reference Pageable"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/service/interfaces/UserService.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 13,
+                    "startColumn": 31,
+                    "charOffset": 371,
+                    "charLength": 8,
+                    "snippet": {
+                      "text": "Pageable"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 11,
+                    "startColumn": 1,
+                    "charOffset": 278,
+                    "charLength": 188,
+                    "snippet": {
+                      "text": "    User getUserById(Long id);\r\n    List<User> getAllUsers();\r\n    Page<User> getUsersByPage(Pageable pageable);\r\n    User createUser(User user);\r\n    User updateUser(Long id, User user);\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "872aafff52c3e865",
+              "equalIndicator/v1": "59ad4882b18be403d2eceb685dd11ec61d1046d54876ba5211d53d65e3c030af"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Page",
+              "markdown": "Unresolved reference Page"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/service/interfaces/UserService.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 13,
+                    "startColumn": 5,
+                    "charOffset": 345,
+                    "charLength": 4,
+                    "snippet": {
+                      "text": "Page"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 11,
+                    "startColumn": 1,
+                    "charOffset": 278,
+                    "charLength": 188,
+                    "snippet": {
+                      "text": "    User getUserById(Long id);\r\n    List<User> getAllUsers();\r\n    Page<User> getUsersByPage(Pageable pageable);\r\n    User createUser(User user);\r\n    User updateUser(Long id, User user);\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "e9fca64b551f5550",
+              "equalIndicator/v1": "5bab30cb1b1b52d7c3d0bb13f2613f432d5c3faa218ca5b6db84e38252a11ee4"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference data",
+              "markdown": "Unresolved reference data"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/service/interfaces/UserService.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 4,
+                    "startColumn": 28,
+                    "charOffset": 121,
+                    "charLength": 4,
+                    "snippet": {
+                      "text": "data"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 2,
+                    "startColumn": 1,
+                    "charOffset": 49,
+                    "charLength": 142,
+                    "snippet": {
+                      "text": "\r\nimport com.portfolio.naeim.entities.User;\r\nimport org.springframework.data.domain.Page;\r\nimport org.springframework.data.domain.Pageable;\r\n\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "b59e32b0770c7ef1",
+              "equalIndicator/v1": "683addbc8cbfdb2bcb1a32b02c5af8cf7c2dcd8c2e5fc89bc417a6a0728d9c90"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference NotEmpty",
+              "markdown": "Unresolved reference NotEmpty"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/UserDTO.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 13,
+                    "startColumn": 6,
+                    "charOffset": 282,
+                    "charLength": 8,
+                    "snippet": {
+                      "text": "NotEmpty"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 11,
+                    "startColumn": 1,
+                    "charOffset": 232,
+                    "charLength": 85,
+                    "snippet": {
+                      "text": "@AllArgsConstructor\r\npublic class UserDTO {\r\n    @NotEmpty\r\n    private String id;\r\n\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "2b2b2d72ec85b8ff",
+              "equalIndicator/v1": "6e38d668165288016cbdb4750bd702a5feff74446049275b0059aed743ff74aa"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Getter",
+              "markdown": "Unresolved reference Getter"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/entities/User.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 11,
+                    "startColumn": 2,
+                    "charOffset": 258,
+                    "charLength": 6,
+                    "snippet": {
+                      "text": "Getter"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 9,
+                    "startColumn": 1,
+                    "charOffset": 246,
+                    "charLength": 48,
+                    "snippet": {
+                      "text": "\r\n@Setter\r\n@Getter\r\n@NoArgsConstructor\r\n@Entity\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "8225aad60e86204f",
+              "equalIndicator/v1": "720992e4689d3383b2b5120ce27f9a4d2c8d64c55f032ac6da2528c7e63d0a87"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference constraints",
+              "markdown": "Unresolved reference constraints"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/UserDTO.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 27,
+                    "charOffset": 62,
+                    "charLength": 11,
+                    "snippet": {
+                      "text": "constraints"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 165,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim.dto;\r\n\r\nimport jakarta.validation.constraints.Email;\r\nimport jakarta.validation.constraints.NotEmpty;\r\nimport lombok.AllArgsConstructor;\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "6d1e75ae73a600dd",
+              "equalIndicator/v1": "7d8df0e547f5d2fb960c131e523ae41920b5d2ada534fd8cd74ae75fb7561d0f"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference springframework",
+              "markdown": "Unresolved reference springframework"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/service/interfaces/UserService.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 4,
+                    "startColumn": 12,
+                    "charOffset": 105,
+                    "charLength": 15,
+                    "snippet": {
+                      "text": "springframework"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 2,
+                    "startColumn": 1,
+                    "charOffset": 49,
+                    "charLength": 142,
+                    "snippet": {
+                      "text": "\r\nimport com.portfolio.naeim.entities.User;\r\nimport org.springframework.data.domain.Page;\r\nimport org.springframework.data.domain.Pageable;\r\n\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "4dc89bf47df7a020",
+              "equalIndicator/v1": "9124f703c175f9e81bbd2f8f39f07c6222eb391bca143cc75b3fdd36a4ad5326"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference SpringApplication",
+              "markdown": "Unresolved reference SpringApplication"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/ProductEngineApplication.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 33,
+                    "charOffset": 62,
+                    "charLength": 17,
+                    "snippet": {
+                      "text": "SpringApplication"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 150,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim;\n\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "3029fae1def9a0ef",
+              "equalIndicator/v1": "99439470a9ddda579135ec3120c9ab0619e059e454edc68265051b63925da8ea"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Data",
+              "markdown": "Unresolved reference Data"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/AuthRequest.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 5,
+                    "startColumn": 2,
+                    "charOffset": 60,
+                    "charLength": 4,
+                    "snippet": {
+                      "text": "Data"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 3,
+                    "startColumn": 1,
+                    "charOffset": 36,
+                    "charLength": 87,
+                    "snippet": {
+                      "text": "import lombok.Data;\r\n\r\n@Data\r\npublic class AuthRequest {\r\n    private String username;\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "52b96df17b6edfde",
+              "equalIndicator/v1": "a5663aaf7de5d456abc90457c0257a2dc9851a54d53a45c80279713ba26d3150"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Id",
+              "markdown": "Unresolved reference Id"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/entities/base/BaseEntity.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 14,
+                    "startColumn": 6,
+                    "charOffset": 367,
+                    "charLength": 2,
+                    "snippet": {
+                      "text": "Id"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 12,
+                    "startColumn": 1,
+                    "charOffset": 292,
+                    "charLength": 148,
+                    "snippet": {
+                      "text": "@MappedSuperclass\r\npublic class BaseEntity implements Serializable {\r\n    @Id\r\n    @GeneratedValue(strategy = GenerationType.IDENTITY)\r\n    @Getter\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "d24c094b85b2690f",
+              "equalIndicator/v1": "bf91966a81760fa927ff62df538112318df64457b326a92cd361e86a653fdaee"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Data",
+              "markdown": "Unresolved reference Data"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/AuthRequest.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 15,
+                    "charOffset": 50,
+                    "charLength": 4,
+                    "snippet": {
+                      "text": "Data"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 65,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim.dto;\r\n\r\nimport lombok.Data;\r\n\r\n@Data\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "de164a0ddfc46d3c",
+              "equalIndicator/v1": "c4f8332b5ec2defad3a241c755312f80b8fca3cd25b899e52f001d47fc7cd6a4"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference springframework",
+              "markdown": "Unresolved reference springframework"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/ProductEngineApplication.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 4,
+                    "startColumn": 12,
+                    "charOffset": 92,
+                    "charLength": 15,
+                    "snippet": {
+                      "text": "springframework"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 2,
+                    "startColumn": 1,
+                    "charOffset": 29,
+                    "charLength": 144,
+                    "snippet": {
+                      "text": "\nimport org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "61f502a2a4d09ebf",
+              "equalIndicator/v1": "c5dab2b11ab5577fc29c328ea533a4cf5d1c53fb6c9c1338d05ea62df2ef72cd"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference NoArgsConstructor",
+              "markdown": "Unresolved reference NoArgsConstructor"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/entities/User.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 12,
+                    "startColumn": 2,
+                    "charOffset": 267,
+                    "charLength": 17,
+                    "snippet": {
+                      "text": "NoArgsConstructor"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 10,
+                    "startColumn": 1,
+                    "charOffset": 248,
+                    "charLength": 70,
+                    "snippet": {
+                      "text": "@Setter\r\n@Getter\r\n@NoArgsConstructor\r\n@Entity\r\n@Table(name = \"users\")\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "6f4fae91af291368",
+              "equalIndicator/v1": "e103349afaa588f7209c0360b8e22321bb9966f4dd584a7749b089d685d875cc"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference Setter",
+              "markdown": "Unresolved reference Setter"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/entities/User.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 10,
+                    "startColumn": 2,
+                    "charOffset": 249,
+                    "charLength": 6,
+                    "snippet": {
+                      "text": "Setter"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 8,
+                    "startColumn": 1,
+                    "charOffset": 223,
+                    "charLength": 62,
+                    "snippet": {
+                      "text": "import lombok.Setter;\r\n\r\n@Setter\r\n@Getter\r\n@NoArgsConstructor\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "1783ee96b38abebc",
+              "equalIndicator/v1": "ec7d1b3bea6845a74522845fa167384defbb93ff87d54b6661946401526fa58e"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          },
+          {
+            "ruleId": "QodanaJavaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference validation",
+              "markdown": "Unresolved reference validation"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "backend/src/main/java/com/portfolio/naeim/dto/UserDTO.java",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 16,
+                    "charOffset": 51,
+                    "charLength": 10,
+                    "snippet": {
+                      "text": "validation"
+                    },
+                    "sourceLanguage": "JAVA"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 165,
+                    "snippet": {
+                      "text": "package com.portfolio.naeim.dto;\r\n\r\nimport jakarta.validation.constraints.Email;\r\nimport jakarta.validation.constraints.NotEmpty;\r\nimport lombok.AllArgsConstructor;\r"
+                    },
+                    "sourceLanguage": "JAVA"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "naeim",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v2": "af6c368ef0818975",
+              "equalIndicator/v1": "f79e67ce02b56730ae67662aac1c7595da48ea85599c37db343aab9d2621cbd9"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical",
+              "tags": [
+                "JAVA"
+              ]
+            }
+          }
+        ],
+        "configProfile": "starter",
+        "deviceId": "200820300000000-5fbd-e1ee-9d8e-6b860b209607",
+        "qodanaNewResultSummary": {
+          "total": 0
+        }
+      }
+    }
+  ]
+}
