@@ -1,7 +1,8 @@
 package com.portfolio.naeim;
 
-import com.portfolio.naeim.dto.UserDTO;
+import com.portfolio.naeim.dto.UserRegisterRequest;
 import com.portfolio.naeim.entities.User;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -18,12 +19,12 @@ import java.util.Objects;
 
 @Import(TestcontainersConfiguration.class)
 @SpringBootTest
+@Transactional
 class ProductEngineApplicationTests {
     private final UserController userController;
 
     @InjectMocks
     private UserService userService;
-
 
     @BeforeEach
     void setUp() {
@@ -47,13 +48,12 @@ class ProductEngineApplicationTests {
     void testUserService() {
         // Given
         User mockUser = new User();
-        mockUser.setId(1L);
         mockUser.setUsername("john_doe");
         mockUser.setPassword("hashed_password");
         userService.createUser(mockUser);
 
         // When
-        var user = userService.getUserById(1L);
+        var user = userService.getUserById(mockUser.getId());
         assertThat(user).isNotNull();
         assertThat(user.getUsername()).isEqualTo("john_doe");
     }
@@ -61,8 +61,8 @@ class ProductEngineApplicationTests {
     @Test
     void testUserController() {
         // Example test case for UserController
-        UserDTO mockUserDTO = new UserDTO("1","john doe", "john_doe", "john@example.com");
-        var createdUser = userController.createUser(mockUserDTO);
+        UserRegisterRequest request = new UserRegisterRequest("John Doe","john_doe", "johndoe@mail.com", "some_password", "some_password");
+        var createdUser = userController.registerUser(request);
 
         var response = userController.getUserById(Long.valueOf(Objects.requireNonNull(createdUser.getBody()).getId()));
         assertThat(response).isNotNull();
