@@ -49,8 +49,9 @@ public class UserServiceImpl implements UserService {
                 .ifPresent(existingUser -> {
                     throw new UserAlreadyExistsException("Username already exists");
                 });
+        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
 
-        return registerUser(user);
+        return userRepository.save(user);
     }
 
     @Override
@@ -73,10 +74,5 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
-    }
-
-    public User registerUser(User user) {
-        user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-        return userRepository.save(user);
     }
 }

@@ -1,6 +1,7 @@
 package com.portfolio.naeim.controller;
 
 import com.portfolio.naeim.dto.UserDTO;
+import com.portfolio.naeim.dto.UserRegisterRequest;
 import com.portfolio.naeim.entities.User;
 import com.portfolio.naeim.service.interfaces.UserService;
 import jakarta.validation.Valid;
@@ -11,8 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.portfolio.naeim.dto.DtoMapper.toUserDTO;
-import static com.portfolio.naeim.dto.DtoMapper.toUserEntity;
+import static com.portfolio.naeim.dto.DtoMapper.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -25,8 +25,8 @@ public class UserController {
     }
 
     @PostMapping("/api/user")
-    public ResponseEntity<UserDTO> createUser(@Valid @RequestBody UserDTO userDTO) {
-        User user = userService.createUser(toUserEntity(userDTO));
+    public ResponseEntity<UserDTO> registerUser(@Valid @RequestBody UserRegisterRequest request) {
+        User user = userService.createUser(userRegisterToUserEntity(request));
         return new ResponseEntity<>(toUserDTO(user), HttpStatus.CREATED);
     }
 
