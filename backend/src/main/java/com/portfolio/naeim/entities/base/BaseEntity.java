@@ -9,11 +9,11 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
+@Setter
+@Getter
 @MappedSuperclass
 public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
-    private Long Id;
+    private Long id;
 }
