@@ -4,9 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 
+import java.io.InputStream;
 import java.lang.reflect.Field;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,26 +40,31 @@ class UserJsonMappingTest {
     public void serializesToJSON() throws Exception {
         // Read the expected JSON from a fixture file (assuming you have a JSON file with user data)
         testUser.setId(1L);
-        String expectedJson = new String(Files.readAllBytes(Paths.get("backend/src/test/resources/fixtures/user.json")));
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("fixtures/user.json")) {
+            assertThat(inputStream).isNotNull();
+            String expectedJson = new String(inputStream.readAllBytes());
+            // Serialize the testUser object to JSON
+            String actualJson = MAPPER.writeValueAsString(testUser);
 
-        // Serialize the testUser object to JSON
-        String actualJson = MAPPER.writeValueAsString(testUser);
-
-        // Assert that the serialized JSON matches the expected JSON
-        assertThat(actualJson).isEqualToIgnoringWhitespace(expectedJson);
+            // Assert that the serialized JSON matches the expected JSON
+            assertThat(actualJson).isEqualToIgnoringWhitespace(expectedJson);
+        }
     }
 
     @Test
     public void deserializesFromJSON() throws Exception {
         // Read the JSON data from a fixture file (user.json)
         testUser.setId(1L);
-        String json = new String(Files.readAllBytes(Paths.get("backend/src/test/resources/fixtures/user.json")));
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("fixtures/user.json")) {
+            assertThat(inputStream).isNotNull();
+            String json = new String(inputStream.readAllBytes());
 
-        // Deserialize the JSON into a User object
-        User deserializedUser = MAPPER.readValue(json, User.class);
+            // Deserialize the JSON into a User object
+            User deserializedUser = MAPPER.readValue(json, User.class);
 
-        // Assert that the deserialized object matches the expected testUser object
-        assertThat(deserializedUser).isEqualTo(testUser).usingRecursiveComparison();
+            // Assert that the deserialized object matches the expected testUser object
+            assertThat(deserializedUser).isEqualTo(testUser).usingRecursiveComparison();
+        }
     }
 
     @Test

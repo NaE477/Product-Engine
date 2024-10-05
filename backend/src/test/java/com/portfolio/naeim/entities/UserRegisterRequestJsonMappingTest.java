@@ -5,9 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.portfolio.naeim.dto.UserRegisterRequest;
 import org.junit.jupiter.api.Test;
 
+import java.io.InputStream;
 import java.lang.reflect.Field;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,25 +41,30 @@ class UserRegisterRequestJsonMappingTest {
     @Test
     public void serializesToJSON() throws Exception {
         // Read the expected JSON from a fixture file (assuming you have a JSON file with user data)
-        String expectedJson = new String(Files.readAllBytes(Paths.get("backend/src/test/resources/fixtures/userRegisterRequest.json")));
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("fixtures/userRegisterRequest.json")) {
+            assertThat(inputStream).isNotNull();
+            String expectedJson = new String(inputStream.readAllBytes());
 
-        // Serialize the testUser object to JSON
-        String actualJson = MAPPER.writeValueAsString(testUser);
+            // Serialize the testUser object to JSON
+            String actualJson = MAPPER.writeValueAsString(testUser);
 
-        // Assert that the serialized JSON matches the expected JSON
-        assertThat(actualJson).isEqualToIgnoringWhitespace(expectedJson);
+            // Assert that the serialized JSON matches the expected JSON
+            assertThat(actualJson).isEqualToIgnoringWhitespace(expectedJson);
+        }
     }
 
     @Test
     public void deserializesFromJSON() throws Exception {
         // Read the JSON data from a fixture file (userRegisterRequest.json)
-        String json = new String(Files.readAllBytes(Paths.get("backend/src/test/resources/fixtures/userRegisterRequest.json")));
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("fixtures/userRegisterRequest.json")) {
+            assertThat(inputStream).isNotNull();
+            String expectedJson = new String(inputStream.readAllBytes());
+            // Deserialize the JSON into a UserRegisterRequest object
+            UserRegisterRequest deserializedUser = MAPPER.readValue(expectedJson, UserRegisterRequest.class);
 
-        // Deserialize the JSON into a UserRegisterRequest object
-        UserRegisterRequest deserializedUser = MAPPER.readValue(json, UserRegisterRequest.class);
-
-        // Assert that the deserialized object matches the expected testUser object
-        assertThat(deserializedUser).isEqualTo(testUser).usingRecursiveComparison();
+            // Assert that the deserialized object matches the expected testUser object
+            assertThat(deserializedUser).isEqualTo(testUser).usingRecursiveComparison();
+        }
     }
 
     @Test
