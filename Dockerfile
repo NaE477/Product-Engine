@@ -5,11 +5,11 @@ FROM maven:3.8.8-eclipse-temurin-21 AS build
 WORKDIR /app
 
 # Copy the pom.xml file and download the project dependencies
-COPY pom.xml .
+COPY backend/pom.xml .
 RUN mvn dependency:go-offline -B
 
 # Copy the source code to the container
-COPY . .
+COPY backend .
 
 # Package the application
 RUN mvn clean package -DskipTests
