@@ -1,5 +1,5 @@
 # Use the official Maven image to build the app
-FROM maven:latest AS build
+FROM maven:3.8.8-eclipse-temurin-21 AS build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -15,7 +15,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Use an official OpenJDK image as a base
-FROM openjdk:17
+FROM openjdk:21
 
 # Set the working directory
 WORKDIR /app
